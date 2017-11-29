@@ -9,7 +9,7 @@ This is a list of topics you should be familiar with that may or may not have be
 * Start by editing the space below to include your name and date (note: you may need to review [Markdown syntax](https://daringfireball.net/projects/markdown/syntax) first)
 
 ```
-your-name-and-date-here
+jonathan mosesman 11-29-17
 ```
 
 * Next, create a new branch called `name-and-date`, commit your change, push it to Github, and create a pull request (PR).
