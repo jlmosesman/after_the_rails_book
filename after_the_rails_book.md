@@ -32,7 +32,7 @@ Blogs are also social proof that you know some things. Most of the time, blogs a
 * Put the link to your site below
 
 ```
-your-sweet-site.com
+https://jlmosesman.github.io/My-Blog/
 ```
 
 ## APIs
