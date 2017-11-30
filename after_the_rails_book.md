@@ -40,7 +40,7 @@ https://jlmosesman.github.io/My-Blog/
 ### What is an API?
 
 ```
-your answer
+Application Program Interface. API's are ways to give universal access to information or assets you want to share. Developers can "plug in" their apps and data to deliver to users.
 ```
 
 ### What status codes are _usually_ returned for the following responses, and what do they mean?
