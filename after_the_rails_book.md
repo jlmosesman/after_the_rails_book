@@ -45,17 +45,21 @@ Application Program Interface. API's are ways to give universal access to inform
 
 ### What status codes are _usually_ returned for the following responses, and what do they mean?
 
-- Success: ` `
-- Created: ` `
-- Unauthorized: ` `
-- Unprocessable entity: ` `
-- Not Found: ` `
-- Internal Server Error: ` `
+- Success: ` 2xx: action was successfully received, understood, and accepted `
+- Created: ` 201: typically the reponse of a PUT request, the request succeeded and a new resource has been created `
+- Unauthorized: ` 401: the request requires user authentication `
+- Unprocessable entity: ` 422: the request was well-formed but was unable to be followed due to semantic errors `
+- Not Found: ` 404: the server cannot find the requested resource; a URL isn't recognized or a resource doesn't exist `
+- Internal Server Error: ` 500: the server has encountered an unexpected error `
 
 ### What are the most common HTTP verbs sent with a HTTP request, and what CRUD actions do they map to?
 
 ```
-your answer
+POST: create
+GET: read
+PUT: update/replace 
+PATCH: update/modify
+DELETE: delete
 ```
 
 ### Build a Rails API that returns JSON for standard CRUD actions on a "user" object.
