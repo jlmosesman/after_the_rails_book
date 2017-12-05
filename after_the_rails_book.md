@@ -172,7 +172,82 @@ After you've completed the above, put the "update" and "delete" endpoints behind
 * Parse the HTTP header and try to look up the user that matches the token. Based on the result, either return unauthorized (see status codes above) or allow the action to go through.
 
 ```
-the authenticated curl requests and responses
+jonathans-imac:todos-api jonathanmosesman$ http :3000/todos
+HTTP/1.1 422 Unprocessable Entity
+Cache-Control: no-cache
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+X-Request-Id: 3483eff4-8675-4652-8a4a-82ea7e338f66
+X-Runtime: 0.105706
+
+{
+    "message": "Missing token"
+}
+
+
+jonathans-imac:todos-api jonathanmosesman$ http :3000/signup name=ash email=ash@email.com password=foobar password_confirmation=foobar
+HTTP/1.1 201 Created
+Cache-Control: max-age=0, private, must-revalidate
+Content-Type: application/json; charset=utf-8
+ETag: W/"1de3c98ca31e54690844618584fcaa32"
+Transfer-Encoding: chunked
+X-Request-Id: b17b9fb2-da62-4b95-bd80-42d777f215b8
+X-Runtime: 0.162254
+
+{
+    "auth_token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1MTI1MjYxMzd9.EeV-r4zhsUgVOUdWIht55vLcKwgMZuB0u969KzcVknE",
+    "message": "Account created successfully"
+}
+
+
+jonathans-imac:todos-api jonathanmosesman$ http :3000/todos Authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1MTI1MjYxMzd9.EeV-r4zhsUgVOUdWIht55vLcKwgMZuB0u969KzcVknE'
+HTTP/1.1 200 OK
+Cache-Control: max-age=0, private, must-revalidate
+Content-Type: application/json; charset=utf-8
+ETag: W/"4f53cda18c2baa0c0354bb5f9a3ecbe5"
+Transfer-Encoding: chunked
+X-Request-Id: 71dff1ef-61b8-4f26-a38a-0f3ee483df64
+X-Runtime: 0.011623
+
+[]
+
+
+jonathans-imac:todos-api jonathanmosesman$ http POST :3000/todos title=Beethoven Authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1MTI1MjYxMzd9.EeV-r4zhsUgVOUdWIht55vLcKwgMZuB0u969KzcVknE'
+HTTP/1.1 201 Created
+Cache-Control: max-age=0, private, must-revalidate
+Content-Type: application/json; charset=utf-8
+ETag: W/"5cadad7331fc70688395abeff22c3480"
+Transfer-Encoding: chunked
+X-Request-Id: 503cdd7f-321c-40a0-a673-4a7b79d041d9
+X-Runtime: 0.007857
+
+{
+    "created_at": "2017-12-05T02:11:34.309Z",
+    "created_by": "1",
+    "id": 2,
+    "title": "Beethoven",
+    "updated_at": "2017-12-05T02:11:34.309Z"
+}
+
+
+jonathans-imac:todos-api jonathanmosesman$ http :3000/todos Authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1MTI1MjYxMzd9.EeV-r4zhsUgVOUdWIht55vLcKwgMZuB0u969KzcVknE'
+HTTP/1.1 200 OK
+Cache-Control: max-age=0, private, must-revalidate
+Content-Type: application/json; charset=utf-8
+ETag: W/"35e72204f3dd5178d1bd61729eb06acb"
+Transfer-Encoding: chunked
+X-Request-Id: b72b8607-9719-407e-9085-bdb80cf94e6b
+X-Runtime: 0.002217
+
+[
+    {
+        "created_at": "2017-12-05T02:11:34.309Z",
+        "created_by": "1",
+        "id": 2,
+        "title": "Beethoven",
+        "updated_at": "2017-12-05T02:11:34.309Z"
+    }
+]
 ```
 
 ## CSS frameworks (Bootstrap/Foundation)
