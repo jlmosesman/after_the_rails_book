@@ -73,7 +73,96 @@ This is probably the largest task in this list, but APIs are everywhere. Take yo
 - Use [cURL](https://curl.haxx.se/) to hit each API endpoint (show the request you made and the responses for each)
 
 ```
-your curl requests and responses
+jonathans-imac:todos-api jonathanmosesman$ http :3000/todos
+HTTP/1.1 200 OK
+Cache-Control: max-age=0, private, must-revalidate
+Content-Type: application/json; charset=utf-8
+ETag: W/"4f53cda18c2baa0c0354bb5f9a3ecbe5"
+Transfer-Encoding: chunked
+X-Request-Id: a680a977-4377-4bfe-a50f-9066db2bd3aa
+X-Runtime: 0.124416
+
+[]
+
+jonathans-imac:todos-api jonathanmosesman$ http POST :3000/todos title=Mozart created_by=1
+HTTP/1.1 201 Created
+Cache-Control: max-age=0, private, must-revalidate
+Content-Type: application/json; charset=utf-8
+ETag: W/"70f92e34030a9fdd1c5997027dce917a"
+Transfer-Encoding: chunked
+X-Request-Id: e4cfc848-58f4-4982-8174-2c534f024353
+X-Runtime: 0.008559
+
+{
+    "created_at": "2017-12-05T00:03:38.605Z",
+    "created_by": "1",
+    "id": 1,
+    "title": "Mozart",
+    "updated_at": "2017-12-05T00:03:38.605Z"
+}
+
+
+jonathans-imac:todos-api jonathanmosesman$ http :3000/todos
+HTTP/1.1 200 OK
+Cache-Control: max-age=0, private, must-revalidate
+Content-Type: application/json; charset=utf-8
+ETag: W/"3b2a4e6378a29a688f8bb06c67a42e13"
+Transfer-Encoding: chunked
+X-Request-Id: 11146295-23a0-4329-918e-d4a1a0627407
+X-Runtime: 0.002143
+
+[
+    {
+        "created_at": "2017-12-05T00:03:38.605Z",
+        "created_by": "1",
+        "id": 1,
+        "title": "Mozart",
+        "updated_at": "2017-12-05T00:03:38.605Z"
+    }
+]
+
+jonathans-imac:todos-api jonathanmosesman$ http PUT :3000/todos/1 title=Beethoven
+HTTP/1.1 204 No Content
+Cache-Control: no-cache
+X-Request-Id: de5603d9-f6d1-41b1-b9ae-9909d974ec9f
+X-Runtime: 0.005578
+
+jonathans-imac:todos-api jonathanmosesman$ http :3000/todos
+HTTP/1.1 200 OK
+Cache-Control: max-age=0, private, must-revalidate
+Content-Type: application/json; charset=utf-8
+ETag: W/"30a4fc8f763c1979b638997a1ea7a1cb"
+Transfer-Encoding: chunked
+X-Request-Id: 465a75fb-e75a-465b-b6a5-ee8834ca7e88
+X-Runtime: 0.001703
+
+[
+    {
+        "created_at": "2017-12-05T00:03:38.605Z",
+        "created_by": "1",
+        "id": 1,
+        "title": "Beethoven",
+        "updated_at": "2017-12-05T00:05:02.421Z"
+    }
+]
+
+
+jonathans-imac:todos-api jonathanmosesman$ http DELETE :3000/todos/1
+HTTP/1.1 204 No Content
+Cache-Control: no-cache
+X-Request-Id: 3589d73d-47ea-458b-ac31-21f91795ea3b
+X-Runtime: 0.012756
+
+jonathans-imac:todos-api jonathanmosesman$ http :3000/todos
+HTTP/1.1 200 OK
+Cache-Control: max-age=0, private, must-revalidate
+Content-Type: application/json; charset=utf-8
+ETag: W/"4f53cda18c2baa0c0354bb5f9a3ecbe5"
+Transfer-Encoding: chunked
+X-Request-Id: 05e160d9-eff5-4455-a38e-86cd93ebc1d2
+X-Runtime: 0.001479
+
+[]
 ```
 
 After you've completed the above, put the "update" and "delete" endpoints behind token authentication. To do this:
