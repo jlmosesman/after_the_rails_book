@@ -264,7 +264,7 @@ Next, do the same thing but use the ruby gem for Bootstrap instead of including 
 Finally, do the same thing as above but using Foundation. Put the Github links below.
 
 ```
-link-to-bootstrap-page
+link-to-bootstrap-page: https://jlmosesman.github.io/bootstrap-project/ (https://github.com/jlmosesman/bootstrap-project)
 link-to-bootstrap-rails-app
 link-to-foundation-page: https://jlmosesman.github.io/foundation-project/ (https://github.com/jlmosesman/foundation-project)
 link-to-foundation-rails-app
