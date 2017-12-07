@@ -266,7 +266,7 @@ Finally, do the same thing as above but using Foundation. Put the Github links b
 ```
 link-to-bootstrap-page
 link-to-bootstrap-rails-app
-link-to-foundation-page
+link-to-foundation-page: https://jlmosesman.github.io/foundation-project/
 link-to-foundation-rails-app
 ```
 
