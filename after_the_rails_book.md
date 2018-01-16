@@ -279,6 +279,9 @@ link-to-foundation-rails-app https://damp-temple-84485.herokuapp.com (https://gi
 3. Add a button with text "Toggle" to the page, and using jQuery, when the button is pressed toggle the visible paragraph to be hidden, and the hidden to be visible.
 4. Next, add another button with text "Hover" that toggles the paragraphs only while your cursor is hovering over the button.
 
+```
+https://jlmosesman.github.io/jQuery-page/ (https://github.com/jlmosesman/jQuery-page)
+```
 ## Command line stuff
 
 ### vim 
