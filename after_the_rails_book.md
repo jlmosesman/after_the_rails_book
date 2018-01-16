@@ -316,7 +316,45 @@ Next:
 Save your commands and paste them below.
 
 ```
-$ your commands here
+jonathans-imac:~ jonathanmosesman$ cd desktop
+jonathans-imac:desktop jonathanmosesman$ mkdir new-folder
+jonathans-imac:desktop jonathanmosesman$ cd new-folder
+jonathans-imac:new-folder jonathanmosesman$ git init
+Initialized empty Git repository in /Users/jonathanmosesman/Desktop/new-folder/.git/
+jonathans-imac:new-folder jonathanmosesman$ touch text-file
+jonathans-imac:new-folder jonathanmosesman$ git add -A
+jonathans-imac:new-folder jonathanmosesman$ git commit -m "add file to repo"
+[master (root-commit) f213199] add file to repo
+ 1 file changed, 1 insertion(+)
+ create mode 100644 text-file
+jonathans-imac:new-folder jonathanmosesman$ git remote add origin https://github.com/jlmosesman/git-practice.git
+jonathans-imac:new-folder jonathanmosesman$ git push -u origin master
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 244 bytes | 244.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/jlmosesman/git-practice.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+jonathans-imac:new-folder jonathanmosesman$ git add -A
+jonathans-imac:new-folder jonathanmosesman$ git commit -m "edited file on repo"
+[master 0be1684] edited file on repo
+ 1 file changed, 1 insertion(+)
+jonathans-imac:new-folder jonathanmosesman$ git commit --amend
+error: There was a problem with the editor 'vi'.
+Please supply the message using either -m or -F option.
+jonathans-imac:new-folder jonathanmosesman$ git commit --amend -m "edited file on repo (AMENDED)"
+[master ce5527a] edited file on repo (AMENDED)
+ Date: Tue Jan 16 15:57:57 2018 -0600
+ 1 file changed, 1 insertion(+)
+jonathans-imac:new-folder jonathanmosesman$ git reset --hard origin/master
+HEAD is now at f213199 add file to repo
+jonathans-imac:new-folder jonathanmosesman$ git reflog
+f213199 (HEAD -> master, origin/master) HEAD@{0}: reset: moving to origin/master
+ce5527a HEAD@{1}: commit (amend): edited file on repo (AMENDED)
+0be1684 HEAD@{2}: commit: edited file on repo
+f213199 (HEAD -> master, origin/master) HEAD@{3}: commit (initial): add file to repo
+jonathans-imac:new-folder jonathanmosesman$ 
+
 ```
 
 ## dotfiles
